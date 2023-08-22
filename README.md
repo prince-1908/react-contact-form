@@ -1,3 +1,5 @@
+The React Contact Form with Local Storage is a beginner-friendly web application that allows users to submit their name and email through a simple contact form. Upon submitting the form, the provided data will be saved to the browser's local storage, and the user's information will be displayed on the same page in a visually appealing format.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

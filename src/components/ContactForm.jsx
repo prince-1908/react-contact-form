@@ -20,13 +20,33 @@ export const ContactForm = () => {
         localStorage.setItem("lastName", JSON.stringify(Last));
         localStorage.setItem("email", JSON.stringify(Email));
 
-        setfName(JSON.parse(localStorage.getItem("firstName")));
-        setmName(JSON.parse(localStorage.getItem("midName")));
-        setlName(JSON.parse(localStorage.getItem("lastName")));
-        setEmail(JSON.parse(localStorage.getItem("email")));
+        const F = JSON.parse(localStorage.getItem("firstName"));
+        const M = JSON.parse(localStorage.getItem("midName"));
+        const L = JSON.parse(localStorage.getItem("lastName"));
+        const E = JSON.parse(localStorage.getItem("email"));
 
+        if (F && M && L && E) {
+            setfName(F);
+            setmName(M);
+            setlName(L);
+            setEmail(E);
+        }
     };
 
+
+    useEffect(() => {
+        const F = JSON.parse(localStorage.getItem("firstName"));
+        const M = JSON.parse(localStorage.getItem("midName"));
+        const L = JSON.parse(localStorage.getItem("lastName"));
+        const E = JSON.parse(localStorage.getItem("email"));
+
+        if (F && M && L && E) {
+            setfName(F);
+            setmName(M);
+            setlName(L);
+            setEmail(E);
+        }
+    }, []);
 
     return (
         <>
@@ -37,7 +57,7 @@ export const ContactForm = () => {
                     placeholder="First Name"
                     className="input-bar"
                     name="firstName"
-                    
+
                 />
 
                 <input
@@ -52,7 +72,7 @@ export const ContactForm = () => {
                     placeholder="Last Name"
                     className="input-bar"
                     name="lastName"
-                    
+
                 />
 
                 <input
@@ -60,7 +80,7 @@ export const ContactForm = () => {
                     placeholder="Email"
                     className="input-bar"
                     name="email"
-                    
+
                 />
 
                 <button type="submit" className="submit-btn">
